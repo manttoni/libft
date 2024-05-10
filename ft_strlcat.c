@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 18:17:06 by amaula            #+#    #+#             */
-/*   Updated: 2024/04/22 17:22:32 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/10 17:33:53 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dstlen;
 	size_t	srclen;
 
+	if (!dst && dstsize == 0)
+		return (0);
 	srclen = ft_strlen(src);
 	dstlen = ft_strlen(dst);
 	i = 0;
