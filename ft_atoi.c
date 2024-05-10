@@ -6,12 +6,9 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:50:35 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/10 16:56:26 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/10 17:06:18 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <stdlib.h>
 
 static int	ft_isspace(char c)
 {
@@ -32,7 +29,6 @@ static int	safe_accumulator(long *l, char c)
 		return (0);
 	*l *= 10;
 	*l += c - '0';
-	printf("%ld\n", *l);
 	return (1);
 }
 
@@ -59,10 +55,4 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	return ((int)(ret *= sign));
-}
-
-int main(void)
-{
-	char *max = "9223372036854775808";
-	printf("%d\n%d\n", ft_atoi(max), atoi(max));
 }
