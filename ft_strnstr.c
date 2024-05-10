@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:27:59 by amaula            #+#    #+#             */
-/*   Updated: 2024/04/22 18:08:16 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/10 17:37:20 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 	size_t	j;
 
+	if (haystack == NULL && len == 0)
+		return (NULL);
 	if (*needle == '\0')
 		return ((char *) haystack);
 	i = 0;
