@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:50:35 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/07 14:31:04 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/10 16:28:39 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,11 @@ static int	ft_isspace(char c)
 
 static int	safe_accumulator(long *l, char c)
 {
-	long	value;
-
-	value = *l;
+	if (9223372036854775807 / 10 - (c - '0') < *l)
+		return (0);
 	*l *= 10;
 	*l += c - '0';
-	if ((*l - (c - '0')) / 10 == value)
-		return (1);
-	return (0);
+	return (1);
 }
 
 int	ft_atoi(const char *str)
